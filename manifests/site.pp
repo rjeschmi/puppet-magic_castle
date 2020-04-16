@@ -5,7 +5,7 @@ node default {
   include profile::consul::client
   include profile::base
   include profile::rsyslog::client
-  include profile::freeipa::client
+  #include profile::freeipa::client
   include profile::metrics::exporter
 }
 
@@ -22,13 +22,13 @@ node /^login\d+$/ {
   include profile::jupyterhub::hub
   include profile::reverse_proxy
   include profile::nfs::client
-  include profile::freeipa::client
+  #include profile::freeipa::client
 }
 
 node /^mgmt1$/ {
   include profile::consul::server
   include profile::metrics::exporter
-  include profile::freeipa::server
+  #include profile::freeipa::server
   include profile::nfs::server
 
   include profile::metrics::server
